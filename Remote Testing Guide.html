@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remote Testing Guide</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 0;
+    padding: 0;
+  }
+  .step {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .step:nth-child(odd) {
+    background-color: #f9f9f9; /* Lighter gray background */
+  }
+  h2 {
+    color: #333; /* Dark gray text color */
+  }
+  p {
+    color: #555; /* Gray text color */
+  }
+</style>
+</head>
+<body>
+
+<div class="step" style="background-color: #ffcccc;">
+  <h2>Why Remote testing is required?</h2>
+  <p>
+    1) To simulate user load which JMeter client machine is not able to handle due to infrastructure or hardware limitations
+  </p>
+</div>
+
+<div class="step" style="background-color: #ccffcc;">
+  <h2>Architecture of Remote testing:</h2>
+  <p>
+    Works on master slave mechanism
+  </p>
+</div>
+
+<div class="step" style="background-color: #ccccff;">
+  <h2>Prerequisites:</h2>
+  <p>
+    1) Master and slave machines must have JMeter installed on them(Similar version)<br>
+    2) Master and slave machines must have Java installed on them(Prefer to use similar version)<br>
+    3) Master and slave machines must connect to each other(same subnet)
+  </p>
+</div>
+
+<div class="step" style="background-color: #ffffcc;">
+  <h2>Configurations Remote testing:</h2>
+  <div>
+    <h3>Step 1:</h3>
+    <p>
+      • Navigate to JMeter/bin folder<br>
+      • Open jmeter properties file<br>
+      • provide the IP address of remote hosts in JMeter properties file
+    </p>
+  </div>
+
+  <div>
+    <h3>Step 2:</h3>
+    <p>
+      • Navigate to JMeter/bin folder<br>
+      • Run create-rmi-keystore file and provide answer to the questions<br>
+      • rmi_keystore.jks file will be created<br>
+      • paste this file to remote hosts JMeter/bin folder
+    </p>
+  </div>
+
+  <div>
+    <h3>Step 3:</h3>
+    <p>
+      • Navigate to JMeter/bin folder<br>
+      • Run jmeter-server file
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
